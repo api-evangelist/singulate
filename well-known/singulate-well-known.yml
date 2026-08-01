@@ -1,0 +1,19 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of https://www.singulate.com/.well-known/*
+host: https://www.singulate.com
+documents:
+- path: /.well-known/security.txt
+  status: 200
+  file: singulate-security.txt
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+notes: Only security.txt is published. No OIDC/OAuth discovery, API catalog, or AI plugin manifest.
+  The marketing site is fully behind a Cloudflare JS challenge (HTML pages 403 to bots);
+  no docs/developer/api subdomains resolve.
